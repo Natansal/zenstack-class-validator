@@ -1,6 +1,6 @@
 {
    "name": "zenstack-validator",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "description": "ZenStack plugin for class-validator: auto generate DTOs from your schema",
    "type": "module",
    "main": "./dist/index.cjs",
