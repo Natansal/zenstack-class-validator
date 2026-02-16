@@ -1,0 +1,61 @@
+{
+   "name": "zenstack-validator",
+   "version": "1.0.0",
+   "description": "ZenStack plugin for class-validator: auto generate DTOs from your schema",
+   "type": "module",
+   "main": "./dist/index.cjs",
+   "module": "./dist/index.js",
+   "types": "./dist/index.d.ts",
+   "exports": {
+      ".": {
+         "types": "./dist/index.d.ts",
+         "import": "./dist/index.js",
+         "require": "./dist/index.cjs"
+      },
+      "./plugin": {
+         "types": "./dist/plugin/index.d.ts",
+         "import": "./dist/plugin/index.js",
+         "require": "./dist/plugin/index.cjs"
+      }
+   },
+   "files": [
+      "dist"
+   ],
+   "scripts": {
+      "build": "tsup",
+      "test": "echo \"Error: no test specified\" && exit 1"
+   },
+   "keywords": [
+      "zenstack",
+      "zenstackhq",
+      "zenstack-v3",
+      "nest",
+      "nestjs",
+      "v3",
+      "class-validator",
+      "class-transformer",
+      "dto",
+      "validation",
+      "decorators"
+   ],
+   "author": "",
+   "license": "ISC",
+   "packageManager": "pnpm@10.15.0",
+   "dependencies": {
+      "ts-morph": "^27.0.2"
+   },
+   "devDependencies": {
+      "@types/node": "^25.2.3",
+      "@zenstackhq/sdk": "^3.3.3",
+      "class-transformer": "^0.5.1",
+      "class-validator": "^0.14.3",
+      "tsup": "^8.3.5",
+      "typescript": "^5.7.2"
+   },
+   "peerDependencies": {
+      "@nestjs/mapped-types": "^2.1.0",
+      "@zenstackhq/sdk": "^3.3.3",
+      "class-transformer": "^0.5.1",
+      "class-validator": "^0.14.3"
+   }
+}

@@ -1,0 +1,36 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+plugin validator {
+    provider = "zenstack-validator/plugin"
+}
+
+enum Role {
+    USER
+    ADMIN
+}
+
+model User with CreatedUpdated {
+    id    String  @id @default(cuid())
+    email String  @email
+    name  String? @trim @lower
+    score Int     @gt(0) @lte(100)
+    role  Role
+    posts Post[]
+}
+
+model Post with CreatedUpdated {
+    id        String  @id @default(cuid())
+    userId    String  @db.Uuid
+    user      User    @relation(fields: [userId], references: [id])
+    title     String  @length(1, 200)
+    content   String?
+    published Boolean @default(false)
+}
+
+type CreatedUpdated {
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
