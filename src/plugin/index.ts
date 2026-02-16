@@ -12,11 +12,6 @@ const plugin: CliPlugin = {
    statusText: "Generating DTOs...",
 
    generate: async ({ model, defaultOutputPath, pluginOptions, schemaFile }) => {
-
-      console.log();
-      console.log("Default output path:", defaultOutputPath);
-      console.log("Plugin options:", JSON.stringify(pluginOptions, null, 2));
-      console.log("Schema file:", schemaFile);
       const schemaDir = path.dirname(schemaFile);
       const outputDir =
          pluginOptions.output && typeof pluginOptions.output === "string"
