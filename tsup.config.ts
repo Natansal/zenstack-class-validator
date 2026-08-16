@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-   entry: ["src/index.ts", "src/plugin/index.ts"],
+   entry: ["src/index.ts", "src/plugin/index.ts", "src/mapped-types/index.ts"],
    format: ["cjs", "esm"],
    dts: true,
    clean: true,
@@ -9,6 +9,9 @@ export default defineConfig({
    outDir: "dist",
    external: [
       "@zenstackhq/sdk",
+      "@zenstackhq/schema",
+      "@nestjs/common",
+      "@nestjs/mapped-types",
       "class-validator",
       "class-transformer",
       "ts-morph",

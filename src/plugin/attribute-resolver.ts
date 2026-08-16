@@ -68,7 +68,10 @@ export function resolveAttribute({
          imports.add({ moduleSpecifier: VALIDATOR_LIB, namedImport: "Length" });
          const min = args.find((a) => a.name === "min")?.value ?? "0";
          const max = args.find((a) => a.name === "max")?.value;
-         const maxArg = max ? `, ${max}` : optionsObj ? ", undefined" : "";
+         const maxArg =
+            max ? `, ${max}`
+            : optionsObj ? ", undefined"
+            : "";
          return { name: "Length", arguments: resolveArgs([`${min}${maxArg}${optionsArg}`]) };
       }
 

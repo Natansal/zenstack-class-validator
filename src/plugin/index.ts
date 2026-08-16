@@ -1,7 +1,6 @@
 import type { CliPlugin } from "@zenstackhq/sdk";
 import { generateDtos } from "./generator";
 import path from "path";
-import { isPlugin } from "@zenstackhq/sdk/ast";
 
 /**
  * 🔌 ZenStack CLI plugin that generates class-validator DTOs from the schema.
@@ -14,9 +13,9 @@ const plugin: CliPlugin = {
    generate: async ({ model, defaultOutputPath, pluginOptions, schemaFile }) => {
       const schemaDir = path.dirname(schemaFile);
       const outputDir =
-         pluginOptions.output && typeof pluginOptions.output === "string"
-            ? path.resolve(schemaDir, pluginOptions.output)
-            : defaultOutputPath;
+         pluginOptions.output && typeof pluginOptions.output === "string" ?
+            path.resolve(schemaDir, pluginOptions.output)
+         :  defaultOutputPath;
       const modelsDir = path.join(defaultOutputPath, "models");
       let relativePath = path.relative(outputDir, modelsDir);
       if (!relativePath.startsWith(".")) {

@@ -1,0 +1,10 @@
+{
+   "tabWidth": 3,
+   "printWidth": 120,
+   "trailingComma": "all",
+   "singleQuote": false,
+   "semi": true,
+   "proseWrap": "always",
+   "singleAttributePerLine": true,
+   "experimentalTernaries": true
+}

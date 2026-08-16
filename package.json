@@ -16,6 +16,11 @@
          "types": "./dist/plugin/index.d.ts",
          "import": "./dist/plugin/index.js",
          "require": "./dist/plugin/index.cjs"
+      },
+      "./mapped-types": {
+         "types": "./dist/mapped-types/index.d.ts",
+         "import": "./dist/mapped-types/index.js",
+         "require": "./dist/mapped-types/index.cjs"
       }
    },
    "files": [
@@ -23,6 +28,8 @@
    ],
    "scripts": {
       "build": "tsup",
+      "format": "prettier --write .",
+      "format:check": "prettier --check .",
       "test": "echo \"Error: no test specified\" && exit 1"
    },
    "keywords": [
@@ -45,16 +52,23 @@
       "ts-morph": "^27.0.2"
    },
    "devDependencies": {
+      "@nestjs/common": "^11.0.0",
+      "@nestjs/mapped-types": "2.1.0",
       "@types/node": "^25.2.3",
+      "@zenstackhq/orm": "^3.3.3",
+      "@zenstackhq/schema": "^3.3.3",
       "@zenstackhq/sdk": "^3.3.3",
       "class-transformer": "^0.5.1",
       "class-validator": "^0.14.3",
+      "prettier": "^3.9.6",
       "tsup": "^8.3.5",
       "typescript": "^5.7.2"
    },
    "peerDependencies": {
       "@nestjs/mapped-types": "^2.1.0",
-      "@zenstackhq/sdk": "^3.3.3",
+      "@nestjs/common": ">=7.6.2",
+      "@zenstackhq/schema": "^3.0.0",
+      "@zenstackhq/sdk": "^3.0.0",
       "class-transformer": "^0.5.1",
       "class-validator": "^0.14.3"
    }

@@ -103,12 +103,12 @@ function orderDeclarationsForGeneration(items: (DataModel | TypeDef)[]): (DataMo
    }
 
    const sortedModels =
-      sortedNames.length === dataModels.length
-         ? sortedNames.map((name) => modelByName.get(name)!)
-         : [
-              ...sortedNames.map((name) => modelByName.get(name)!),
-              ...dataModels.filter((m) => !sortedNames.includes(m.name)),
-           ];
+      sortedNames.length === dataModels.length ?
+         sortedNames.map((name) => modelByName.get(name)!)
+      :  [
+            ...sortedNames.map((name) => modelByName.get(name)!),
+            ...dataModels.filter((m) => !sortedNames.includes(m.name)),
+         ];
 
    return [...typeDefs, ...sortedModels];
 }
