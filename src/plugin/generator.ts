@@ -224,7 +224,7 @@ function addFields({
 
       classDecl.addProperty({
          name: field.name,
-         type: `${tsType}${isArray ? "[]" : ""}`,
+         type: `${tsType}${isArray ? "[]" : ""}${isOptional ? " | null" : ""}`,
          hasQuestionToken: isOptional,
          hasExclamationToken: !isOptional,
          decorators,
